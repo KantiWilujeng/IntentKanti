@@ -1,11 +1,15 @@
 package com.example.intentkanti
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
-class MoveWithDataActivity : AppCompatActivity() {
+class MoveWithDataActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var tvDataReceived: TextView
+    private lateinit var btnBackToMainPage: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,6 +17,8 @@ class MoveWithDataActivity : AppCompatActivity() {
 
         tvDataReceived = findViewById(R.id.tv_data_received)
         DataReceived()
+        btnBackToMainPage = findViewById(R.id.btn_back)
+        btnBackToMainPage.setOnClickListener(this)
     }
 
     private fun DataReceived() {
@@ -22,4 +28,17 @@ class MoveWithDataActivity : AppCompatActivity() {
 
         tvDataReceived.text = nama + " " + alamat
     }
+
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
+                R.id.btn_back_to_main_page -> run {
+                    val intent = Intent(this, MoveActivity.BackToMainPage::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
+    }
+}
+    class BackToMainPage {
 }
