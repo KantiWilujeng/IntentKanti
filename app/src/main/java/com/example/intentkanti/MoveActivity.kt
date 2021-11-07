@@ -7,20 +7,20 @@ import android.view.View
 import android.widget.Button
 
 class MoveActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var btnBack: Button
+    private lateinit var btnBackToMainPage: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_move)
 
-        btnBack = findViewById(R.id.btn_back)
-        btnBack.setOnClickListener(this)
+        btnBackToMainPage = findViewById(R.id.btn_back_to_main_page)
+        btnBackToMainPage.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         if (v != null)
             when (v.id) {
-                R.id.btn_back -> run {
+                R.id.btn_back_to_main_page -> run {
                     val intent = Intent(this, BackToMainPage::class.java)
                     startActivity(intent)
                 }

@@ -17,7 +17,7 @@ class MoveWithDataActivity : AppCompatActivity(), View.OnClickListener {
 
         tvDataReceived = findViewById(R.id.tv_data_received)
         DataReceived()
-        btnBackToMainPage = findViewById(R.id.btn_back)
+        btnBackToMainPage = findViewById(R.id.btn_back_to_main_page)
         btnBackToMainPage.setOnClickListener(this)
     }
 
@@ -33,7 +33,7 @@ class MoveWithDataActivity : AppCompatActivity(), View.OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.btn_back_to_main_page -> run {
-                    val intent = Intent(this, MoveActivity.BackToMainPage::class.java)
+                    val intent = Intent(this, BackToMainPage::class.java)
                     startActivity(intent)
                 }
             }

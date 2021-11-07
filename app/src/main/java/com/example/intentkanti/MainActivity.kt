@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnMoveWithData.setOnClickListener(this)
     }
 
-    override fun onClick(v:View?) {
+    override fun onClick(v: View?) {
         if (v != null) {
             when(v.id) {
                 R.id.btn_move_activity -> run {
